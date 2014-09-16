@@ -21,6 +21,8 @@ public class Car
      */
     public Car(double fuelEfficiency)
     {
+        this.fuelEfficiency = fuelEfficiency;
+        fuelInTank = 0;
     }
 
     /**
@@ -31,18 +33,21 @@ public class Car
      */
     public void addGas(double gallons)
     {
+        this.fuelInTank = this.fuelInTank + gallons;
     }
     
     /**
      * Reduces the fuel in this car's tank based om this car's fuel efficiency and the
      *  specified number of miles
      *
-     * @pre     the specified number of miles will not consume more than the amount of fuel in this
-     *              cars's tank
+     * @pre     the specified number of miles will not consume more than the amount of fuel in 
+     *              this cars's tank
      * @param   miles   number of miles driven
      */
     public void drive(double miles)
     {
+        double gallonsBurned = miles / this.fuelEfficiency;
+        this.fuelInTank = this.fuelInTank - gallonsBurned;
     }
     
     /**
@@ -52,7 +57,7 @@ public class Car
      */
     public double getGasInTank()
     {
-        return 0;
+        return this.fuelInTank;
     }
 
 

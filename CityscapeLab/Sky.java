@@ -24,8 +24,6 @@ public class Sky
 
     /**
      * Draws the sky onto the Graphics2D object
-     *
-     * @post    A colored Sky
      */
     public void draw(Graphics2D g2)
     {

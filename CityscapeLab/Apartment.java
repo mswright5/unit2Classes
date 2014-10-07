@@ -11,13 +11,15 @@ import java.awt.Rectangle;
 public class Apartment
 {
     /** Width and Height of the entire apartment building */
-    private int width, height;
+    private int width, height, startX, startY;
 
     /**
      * Default constructor for objects of class Apartment
      */
-    public Apartment(int width, int height)
+    public Apartment(int startX, int startY, int width, int height)
     {
+        this.startX = startX;
+        this.startY = startY;
         this.width = width;
         this.height = height;
     }
@@ -33,10 +35,9 @@ public class Apartment
      * @param    y    description of parameter y
      * @return    description of the return value
      */
-    public void draw(Graphics2D g2, int start, int end)
+    public void draw(Graphics2D g2)
     {
-        Rectangle rectangle = new Rectangle(start, end, this.width, this.height);
-        
+        Rectangle rectangle = new Rectangle(this.startX, this.startY, this.width, this.height);
         
         g2.draw(rectangle);
         g2.fill(rectangle);
